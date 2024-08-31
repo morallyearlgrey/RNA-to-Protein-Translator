@@ -2,14 +2,14 @@
 
 using namespace std;
 
+// TRANSLATOR
+// converts RNA sequences to their corresponding protein sequences
 string translator(string seq, int st, int en) {
     string returnSequence = "MET";
 
     for(int i=st; i<en; i+=3) {
         string protein = seq.substr(i, 3);
-
-        // there's definitely more efficient methods... but i'm too lazy
-        // i'm just a girl ):
+        
         if(seq.substr(i, 2)=="CU") {
             returnSequence+="-LEU";
 
@@ -90,6 +90,8 @@ string translator(string seq, int st, int en) {
 
 }
 
+// MAIN
+// allows the user to input RNA sequences and then passes to translator
 int main() {
     
     cout << "Simple RNA to Protein Translator (Compiler)\n";
